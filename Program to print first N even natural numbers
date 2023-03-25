@@ -1,0 +1,13 @@
+#include<stdio.h>  // first n even natural numbers 
+int main()
+{
+    int n, i;
+    printf("Enter any number = ");
+    scanf("%d",&n);
+    printf("First %d even natural numbers are = ", n);
+    for(i=2;i<=2*n;i=i+2)
+    {
+        printf("%d ", i);
+    }
+    return 0;
+}
