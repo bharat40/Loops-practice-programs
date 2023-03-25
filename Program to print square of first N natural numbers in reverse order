@@ -1,0 +1,13 @@
+#include<stdio.h>  // square of first n natural number in reverse order
+int main()
+{
+    int n, i;
+    printf("Enter any number = ");
+    scanf("%d",&n);
+    printf("Square of first %d natural numbers in reverse order are = ", n);
+    for(i=n;i>=1;i--)
+    {
+        printf("%d ", i*i);
+    }
+    return 0;
+}
