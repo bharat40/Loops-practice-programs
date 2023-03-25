@@ -1,0 +1,13 @@
+#include<stdio.h>  // square of first n natual numbers
+int main()
+{
+    int n, i;
+    printf("Enter any number = ");
+    scanf("%d",&n);
+    printf("Square of first %d natural numbers are = ", n);
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ", i*i);
+    }
+    return 0;
+}
