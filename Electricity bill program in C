@@ -1,0 +1,39 @@
+Question: Write a program in C to generate the electricity bills for 5 customers and find out the total amount paid by the all customers as per following billing plan to be paid by the customer (as per consumed units):
+If consumed units are 0-200 then electricity charges are NIL.
+If consumed units are 0-300 then electricity charges are Rs. 3 per unit.
+If consumed units are 301-500 then electricity charges are Rs. 3 per unit for 1 to 300 units and Rs. 5 per unit for 301 to 500 units.
+If consumed units are more than 500 then electricity charges are Rs. 3 per unit for 1 to 300 units, Rs. 5 per unit for 301 to 500 units and Rs. 7 per unit for 501 and above.
+
+
+
+#include<stdio.h> // electricity bill
+int main()
+{
+    int cr, pr, unit, amt = 0;
+    for(int i=1; i<=5; i++)
+    {
+        printf("Enter previous meter reading and current meter reading: ");
+        scanf("%d %d",&pr, &cr);
+        unit = cr - pr;
+        if(unit<=200)
+        {
+            amt += 0;
+        }
+        else if(unit<=300)
+        {
+            amt = amt + (unit*3);
+        }
+        else if(unit<=500)
+        {
+            int temp = unit - 300;
+            amt = amt + (300*3) + (temp*5);
+        }
+        else
+        {
+            int temp = unit - 500;
+            amt = amt + (300*3) + (200*5) + (temp*7);
+        }
+    }
+    printf("Total amount paid: %d", amt);
+    return(0);
+}
