@@ -1,0 +1,44 @@
+Question: John is a creative genius(or so he likes to call himself). He is given a number and add its digit with alternate signs (i. e.
++ and -) . For eg. if the given digit is 896 john will do +8 + (-9) + (+6) and return 5 as answer. First sign will be positive.
+Write a C program to help Sahil achieve the same functionality in C.
+
+
+
+
+#include<stdio.h> // Alternate digit sum
+int main()
+{
+    int n;
+    printf("enter any number: ");
+    scanf("%d",&n);
+    int k;  // temporary variable for storing number
+    k=n; 
+    int digits=0;
+    while(k>0)  // loop for checking the number of digits
+    {
+        digits++;
+        k=k/10;
+    }
+    int sum=0, i;  
+    if(digits%2==0) 
+    {
+        i=1;
+    }
+    else{
+        i=0;
+    }
+    while(n>0)   // digit on even places will have negative sign and digits on odd places will have positive sign  
+    {
+        if(i%2==0)
+        {
+            sum=sum+n%10;
+        }
+        else
+        {
+            sum=sum-n%10;
+        }
+        n=n/10;
+        i++;
+    }
+    printf("%d",sum); // dry run this code in your notebook
+}
